@@ -1,12 +1,12 @@
 #==============================[SI VES QUE HAY COSAS NO NECESARIAS ES PQ ESTOS IMPORTS LOS SAQUE DE MI OTRA TOOL]==========================
-import discord, asyncio, requests, os, colorama, pymongo, time, pystyle, json
+import discord, asyncio, requests, os, colorama, pymongo, time, pystyle, json, requests
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 import requests
 import semver
 
-current_version = "1.0.0"
+current_version = "1.0.1"
 
 github_api_url = "https://api.github.com/repos/{username}/{repository}/releases/latest".format(
     username="youngaos",
