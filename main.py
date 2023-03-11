@@ -9,8 +9,8 @@ import semver
 current_version = "1.0.0"
 
 github_api_url = "https://api.github.com/repos/{username}/{repository}/releases/latest".format(
-    username="tu-usuario-de-github",
-    repository="tu-repositorio"
+    username="youngaos",
+    repository="Savage-Nuker"
 )
 
 response = requests.get(github_api_url)
@@ -25,14 +25,13 @@ else:
 
 
 banner1 = r"""
-
-██████  ██████      ████████  ██████   ██████  ██         
-██   ██ ██   ██        ██    ██    ██ ██    ██ ██        
-██   ██ ██   ██        ██    ██    ██ ██    ██ ██        
-██   ██ ██   ██        ██    ██    ██ ██    ██ ██         
-██████  ██████         ██     ██████   ██████  ███████     
-                                                                                           
-                                                                                                                                                                                                                                                                            
+███████  █████  ██    ██  █████   ██████  ███████ 
+██      ██   ██ ██    ██ ██   ██ ██       ██      
+███████ ███████ ██    ██ ███████ ██   ███ █████   
+     ██ ██   ██  ██  ██  ██   ██ ██    ██ ██      
+███████ ██   ██   ████   ██   ██  ██████  ███████ 
+                                                  
+                                                                                                                                                                                                                                                                
 
 """[1:]
 
