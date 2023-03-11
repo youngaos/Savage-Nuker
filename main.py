@@ -1,12 +1,12 @@
 #==============================[SI VES QUE HAY COSAS NO NECESARIAS ES PQ ESTOS IMPORTS LOS SAQUE DE MI OTRA TOOL]==========================
-import discord, asyncio, requests, os, colorama, pymongo, time, pystyle, json, requests
+import discord, asyncio, requests, os, colorama, pymongo, time, pystyle, json, requests, semver
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 import requests
 import semver
 
-current_version = "1.0.1"
+current_version = "1.0.0"
 
 github_api_url = "https://api.github.com/repos/{username}/{repository}/releases/latest".format(
     username="youngaos",
@@ -19,7 +19,6 @@ latest_version = response.json()["tag_name"]
 
 if semver.compare(current_version, latest_version) < 0:
     print("Hay una nueva versión disponible: {}".format(latest_version))
-    return
 else:
     print("Tu herramienta está en la última versión.")
 
@@ -32,7 +31,6 @@ banner1 = r"""
 ███████ ██   ██   ████   ██   ██  ██████  ███████ 
                                                   
                                                                                                                                                                                                                                                                 
-
 """[1:]
 
 def clear():
