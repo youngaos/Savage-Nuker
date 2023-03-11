@@ -8,7 +8,7 @@ import semver
 
 current_version = "1.0.0"
 
-github_api_url = "https://api.github.com/repos/{username}/{repository}/releases/latest".format(
+github_api_url = "https://api.github.com/repos/{username}/{repository}/zipball/master".format(
     username="youngaos",
     repository="Savage-Nuker"
 )
