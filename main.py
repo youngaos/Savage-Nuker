@@ -26,6 +26,7 @@ token = input("[>] Bot token: ")
 
 
 #============NUKE=============
+
 async def nuke():
    server = input("[!] Server ID: ")
    try:
@@ -164,9 +165,8 @@ async def admin():
 #=============OPTIONS==============       
 async def optins():
         print(Colorate.Vertical(Colors.white_to_red, banner1, 1))
-        print(f"[+] Bot iniciado como {bot.user}")
-        print(f"Fuck Skiders / Jodanse skiders(copiones)")  
-        print("By YoungAOS"\n)
+        print(f"[+] Bot iniciado como {bot.user}\n")
+        print(f"Fuck Skiders / Jodanse skiders(copiones)")        
         print(Fore.BLUE + "         [1] Eliminar canales.    |   [3] Spamear canales. (WEBHOOK)   ")
         print(Fore.BLUE + "         [2] Crear canales.       |   [4] Admin.          ")
         print(Fore.BLUE + "                              [5] | Banall")        
@@ -187,6 +187,7 @@ async def optins():
 
 @bot.event
 async def on_ready():
+	await clear()
     await optins()
 
 bot.run(token)
