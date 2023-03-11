@@ -188,6 +188,6 @@ async def optins():
 @bot.event
 async def on_ready():
 	await clear()
-    await optins()
+        await optins()
 
 bot.run(token)
