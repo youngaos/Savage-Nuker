@@ -1,27 +1,8 @@
 #==============================[SI VES QUE HAY COSAS NO NECESARIAS ES PQ ESTOS IMPORTS LOS SAQUE DE MI OTRA TOOL]==========================
-import discord, asyncio, requests, os, colorama, pymongo, time, pystyle, json, requests, semver
+import discord, asyncio, requests, os, colorama, pymongo, time, pystyle
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
-import requests
-import semver
-
-current_version = "1.0.0"
-
-github_api_url = "https://api.github.com/repos/{username}/{repository}/zipball/master".format(
-    username="youngaos",
-    repository="Savage-Nuker"
-)
-
-response = requests.get(github_api_url)
-
-latest_version = response.json()["tag_name"]
-
-if semver.compare(current_version, latest_version) < 0:
-    print("Hay una nueva versión disponible: {}".format(latest_version))
-else:
-    print("Tu herramienta está en la última versión.")
-
 
 banner1 = r"""
 ███████  █████  ██    ██  █████   ██████  ███████ 
@@ -183,8 +164,9 @@ async def admin():
 #=============OPTIONS==============       
 async def optins():
         print(Colorate.Vertical(Colors.white_to_red, banner1, 1))
-        print(f"[+] Bot iniciado como {bot.user}\n")
-        print(f"Fuck Skiders / Jodanse skiders(copiones)")        
+        print(f"[+] Bot iniciado como {bot.user}")
+        print(f"Fuck Skiders / Jodanse skiders(copiones)")  
+        print("By YoungAOS"\n)
         print(Fore.BLUE + "         [1] Eliminar canales.    |   [3] Spamear canales. (WEBHOOK)   ")
         print(Fore.BLUE + "         [2] Crear canales.       |   [4] Admin.          ")
         print(Fore.BLUE + "                              [5] | Banall")        
