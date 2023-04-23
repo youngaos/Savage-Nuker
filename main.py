@@ -4,8 +4,8 @@ from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
-
-VERSION = "1.0.0.1"
+#a
+VERSION = "1.0.0.2"
 API_BASE_URL = "https://api.github.com/repos/youngaos/Savage-Nuker"
 
 def get_latest_version():
