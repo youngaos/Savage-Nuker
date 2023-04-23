@@ -23,7 +23,7 @@ def clear():
 
 
 intents = discord.Intents().all()
-bot = commands.Bot(command_prefix=";124ohboijhiijioijnjojn5ed", intents=intents)
+bot = commands.Bot(command_prefix=";124ohboijhiijioiljnjojn5ed", intents=intents)
 bot.remove_command('help')
 archivo_tokens = "tokens.json"
 
@@ -217,6 +217,28 @@ async def banall():
     await asyncio.sleep(2)
     clear()
     await optins()
+#================ROLE CREATION========
+async def create_role():
+    try: 
+        name = input("[!] Role Names: ")
+        am = input("[!] Roles Amount: ")
+    except:
+        pass   
+    try:
+       guild = bot.get_guild(int(server))
+       if guild is None:
+           raise ValueError("[!] Server Not Found")
+    except ValueError as e:
+       print(f"[!] Error: {e}")
+       return
+    for _i in range(am):
+       try:
+        await ctx.guild.create_role(name=name)
+       except Exception:
+        error_count += 1
+        if error_count > 10:
+            break
+
 #================ADMIN================
 async def admin():
    try: 
@@ -245,10 +267,10 @@ async def optins():
         print(Colorate.Vertical(Colors.white_to_red, banner1, 1))
         print(f"[+] Bot iniciado como {bot.user}\n")
         print(Fore.BLUE + f"""
-            ╔═════════════════════╦═════════════════════════════╦═════════════╗
-            ║ 1; Delete Channels    3; Spam Channels (Webhooks)   5; MassBan  ║
-            ║ 2; Create Channels    4; Admin                                  ║
-            ╚═════════════════════╩═════════════════════════════╩═════════════╝
+            ╔═════════════════════╦═════════════════════════════╦═════════════════╗
+            ║ 1; Delete Channels  ║ 3; Spam Channels (Webhooks) ║ 5; MassBan      ║
+            ║ 2; Create Channels  ║ 4; Admin                    ║ 6; Create Roles ║
+            ╚═════════════════════╩═════════════════════════════╩═════════════════╝
             """)     
         option = input(": ")
         try:    
@@ -277,6 +299,11 @@ async def optins():
                     await banall() 
                 except:
                     pass    
+            elif option == "6":
+                try:
+                    await create_role() 
+                except:
+                    pass   
             else:
                 try:
                     print("[!] Invalid option.")
