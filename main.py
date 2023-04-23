@@ -3,7 +3,7 @@ import discord, asyncio, os, colorama, time, pystyle, json, requests, sys
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
-VERSION = "1.0.0.3"
+VERSION = "v1.0.0.3"
 banner1 = rf"""
                           ███████  █████  ██    ██  █████   ██████  ███████ 
                           ██      ██   ██ ██    ██ ██   ██ ██       ██      
