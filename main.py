@@ -1,11 +1,10 @@
 #==============================[SOURCE CODE BY YOUNGAOS | https://discord.gg/deaddestroyers]==========================
-import discord, asyncio, os, colorama, time, pystyle, json, requests
+import discord, asyncio, os, colorama, time, pystyle, json, requests, sys
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
-#a
-VERSION = "1.0.0.2"
+VERSION = "1.0.0.0"
 API_BASE_URL = "https://api.github.com/repos/youngaos/Savage-Nuker"
 
 def get_latest_version():
@@ -20,6 +19,8 @@ latest_version = get_latest_version()
 if latest_version and latest_version > VERSION:
     print("NEW UPDATE | Actual version {} | New Version {}".format(VERSION, latest_version))
     sys.exit()
+
+
 
 
 
