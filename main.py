@@ -3,27 +3,7 @@ import discord, asyncio, os, colorama, time, pystyle, json, requests, sys
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
-
-VERSION = "1.0.0.0"
-API_BASE_URL = "https://api.github.com/repos/youngaos/Savage-Nuker"
-
-def get_latest_version():
-    url = f"{API_BASE_URL}/releases/latest"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()["tag_name"]
-    else:
-        return None
-
-latest_version = get_latest_version()
-if latest_version and latest_version > VERSION:
-    print("NEW UPDATE | Actual version {} | New Version {}".format(VERSION, latest_version))
-    sys.exit()
-
-
-
-
-
+VERSION = "1.0.0.2"
 banner1 = rf"""
                           ███████  █████  ██    ██  █████   ██████  ███████ 
                           ██      ██   ██ ██    ██ ██   ██ ██       ██      
@@ -68,7 +48,7 @@ if not os.path.isfile(archivo_tokens):
     with open(archivo_tokens, "w") as archivo:
         json.dump(data, archivo, indent=4)
 
-opcion = input("1: Saved tokens\n2: New Token\n")
+opcion = input("==============\n1: Saved tokens\n2: New Token\n==============")
 
 if opcion == "1":
     tokens_guardados = obtener_tokens_guardados()
@@ -88,7 +68,20 @@ else:
 
 server = input("[!] Server ID: ")
 
+API_BASE_URL = "https://api.github.com/repos/youngaos/Savage-Nuker"
 
+def get_latest_version():
+    url = f"{API_BASE_URL}/releases/latest"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()["tag_name"]
+    else:
+        return None
+
+latest_version = get_latest_version()
+if latest_version and latest_version > VERSION:
+    print("NEW UPDATE | Actual version {} | New Version {}".format(VERSION, latest_version))
+    sys.exit()
 
 #============NUKE=============
 
@@ -178,7 +171,7 @@ async def spam2():
             webhook = wh
             break
 
-        if webhook is None: # Si no existe una webhook, la creamos
+        if webhook is None: 
             webhook = await channel.create_webhook(name="DD")
 
         for i in range(int(pings)):
@@ -227,7 +220,7 @@ async def banall():
 #================ADMIN================
 async def admin():
    try: 
-        autho = input("[!] Tu ID: ")
+        autho = input("[!] Your ID: ")
    except:
         pass     
    try:
@@ -307,7 +300,7 @@ async def st():
     try:
         await bot.start(token)
     except:
-        print(Fore.RED + "[!] Invalid Token")
+        print(Fore.RED + "[!] Invalid Token or no intents")
     finally:
         await bot.close()
         loop.close()
