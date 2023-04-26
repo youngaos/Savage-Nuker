@@ -9,5 +9,5 @@ __Savage Nuker__
 https://discord.gg/deaddestroyers
 
 
-%CRDITOS%
+`CRDITOS`
 - YoungAOS
