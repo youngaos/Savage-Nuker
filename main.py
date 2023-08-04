@@ -205,13 +205,13 @@
 """
 
 
-#==============================[SOURCE CODE BY YOUNGAOS | https://discord.gg/deaddestroyers]==========================
+#==============================[SOURCE CODE BY YOUNGAOS | https://discord.gg/dix]==========================
 import discord, os, colorama, time, pystyle, json, requests, sys, requests, threading, asyncio, random, json
 from discord.ext import commands
 from colorama import Fore, Back, Style
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
-VERSION = "v1.1.1.3"
+VERSION = "v1.1.1.4"
 banner1 = rf"""
                           ███████  █████  ██    ██  █████   ██████  ███████ 
                           ██      ██   ██ ██    ██ ██   ██ ██       ██      
@@ -220,8 +220,7 @@ banner1 = rf"""
                           ███████ ██   ██   ████   ██   ██  ██████  ███████  
 =====================================================================================================
 Varsion: {VERSION}
-Plan: Free
-(NO MORE PLANS FOR THE MOMENT)
+Fuck skids
 =====================================================================================================                                                  
                                                                                                                                                                                                                                                                 
 """[1:]
@@ -231,7 +230,7 @@ if sys.platform == "win32":
 else:
     clear = lambda: os.system("clear")
 
-apis = ["v5","v6", "v9", "v7", "v8"]
+apis = ["v6", "v9", "v7", "v8"]
 
 with open('./bag/proxies.txt') as f:
     proxies = f.read().splitlines()
@@ -240,7 +239,7 @@ with open('./bag/proxies.txt') as f:
 colors = [getattr(colorama.Fore, c) for c in dir(colorama.Fore) if not c.startswith("_")]
 #=====================================================================
 intents = discord.Intents().all()
-bot = commands.Bot(command_prefix=";124ohboijhiijioiljnjojn5ed", intents=intents)
+bot = commands.Bot(command_prefix=";124ohboijhiijioiljnjojn5edidklol!L_prefix", intents=intents)
 bot.remove_command('help')
 archivo_tokens = "./bag/tokens.json"
 
@@ -269,10 +268,10 @@ opcion = input("=================\n1: Saved tokens\n2: New Token\n==============
 
 if opcion == "1":
     tokens_guardados = obtener_tokens_guardados()
-    print("Tokens guardados:")
+    print("Saved Tokens:")
     for i, token in enumerate(tokens_guardados):
         print(f"{i+1}: {token}")
-    opcion_token = input("Selecciona un token: ")
+    opcion_token = input("Slect a token: ")
     token_seleccionado = tokens_guardados[int(opcion_token)-1]
     token = token_seleccionado
 elif opcion == "2":
@@ -299,7 +298,7 @@ if latest_version and latest_version > VERSION:
 
 headers = {"Authorization": f"Bot {token}"}
 sessions = requests.Session()
-dea = input("Proxies support? (Recommnded for bypass ratelimit.) [y/n]: ")
+dea = input("Proxies support? (Recommnded for bypass ratelimit. For more speed say (N)) [y/n]: ")
 if dea == "y".lower():
     proxy = {'http': proxies[random.randint(0, len(proxies)-1)]}
 else:
@@ -545,12 +544,12 @@ async def admin():
 #=============OPTIONS==============       
 async def optins():
         print(Colorate.Vertical(Colors.white_to_red, banner1, 1))
-        print(f"[+] Bot iniciado como {bot.user}\n")
-        print(Fore.BLUE + f"""
-    ╔═════════════════════╦═════════════════════════════╦═════════════════════╦═════════════════╗
-    ║ 1; Delete Channels  ║ 3; Spam Channels (Webhooks) ║ 5; MassBan          ║ 7; MassBan IDs  ║
-    ║ 2; Create Channels  ║ 4; Admin                    ║ 6; Create Roles     ║ 8; Spam Channels║
-    ╚═════════════════════╩═════════════════════════════╩═════════════════════╩═════════════════╝
+        print(f"[+] Loged has {bot.user}")
+        print(Fore.RED + f"""
+       ╔═════════════════════╦═════════════════════════════╦═════════════════════╦═════════════════╗
+       ║ 1; Delete Channels  ║ 3; Spam Channels (Webhooks) ║ 5; MassBan          ║ 7; MassBan IDs  ║
+       ║ 2; Create Channels  ║ 4; Admin                    ║ 6; Create Roles     ║ 8; Spam Channels║
+       ╚═════════════════════╩═════════════════════════════╩═════════════════════╩═════════════════╝
             """)     
         option = input(": ")
         try:    
